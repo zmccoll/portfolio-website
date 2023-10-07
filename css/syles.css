@@ -1,0 +1,254 @@
+* {
+    box-sizing: border-box;
+}
+:root {
+    --primary-color: #438b3d;
+    --secondary-color: rgb(214, 212, 209);
+    --dark-grey: #2b2b2b;
+    --button-background: #165011;
+    --button-secondary: #302ddf;
+}
+body {
+    font-family: 'Exo 2', sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+.page-header {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+}
+.page-header__item {
+ flex: 0 1 200px;   
+}
+.page-header__item:last-child {
+    flex-grow: 1;
+    text-align: right;
+}
+.navigation-list {
+    list-style-type: none;
+}
+.navigation-list li {
+    display: inline-block;
+    margin-left: 20px;
+}
+.navigation-list li:hover {
+    animation: 1s nav-link-scale infinite alternate ease;
+    animation-play-state:running;
+}
+.contact-info {
+    display: block;
+    margin: 10px
+}
+.about-list {
+    list-style-type: none;
+    text-align: center;
+}
+.about-list__item {
+    display: block;
+    font-weight: 600;
+    text-align: center;
+    margin: 20px;
+    
+}
+
+.page-footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.two-buttons{
+    clear: both;
+    text-align: center;
+
+}
+a{
+    color: #357b70;
+}
+.profile {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+a:visited {
+    /* visited link*/
+    color: #05676e;
+}
+a:hover, a:focus {
+    /* no underlining when hovering a link*/
+    text-decoration: none;
+    animation: 1s nav-link-scale 1 linear;
+}
+a:active {
+    /*selected link*/
+    color: #489c79;
+}
+
+button,
+.button {
+    border: none; /*overwrites brower default and resets the border*/
+    font-family: inherit; /*this will take font from outer container*/
+    background-color: var(--button-background);
+    color: var(--secondary-color);
+    font-size: 16px;
+    text-decoration: underline; 
+    padding: 10px;/*adds spacing to the button*/
+    border-radius: 20px;/*makes corner more or less rounded, the bigger the number the more rounded the corners get*/
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);/*gives the button a bottom border with a width of 2px, a type of solid, and a color in rgba format*/
+    display: inline-block;
+    transition: opacity 0.9s;
+    margin: 1%;
+}
+button:active {
+    background-color: #4b7a47;/*changes color of button when clicked*/
+}
+.button_secondary {
+    background-color: var(--button-secondary);
+    color: var(--secondary-color);
+}
+button:hover, button:focus, .button:hover, .button:focus {
+    text-decoration: none;
+    cursor: pointer;/*changes mouse appearence to a hand*/
+    opacity: 0.8;/*reduces opacity of button to 80%(the color of the button actually isn't changing, more of the background color is actually showing through, don't use this on images*/
+}
+.navigation-list__item--active{
+    text-decoration: none;
+}
+.profile__portrait {
+    width: 250px;
+    float: left;
+    margin: 40px;
+    border-radius: 50%;
+
+}
+.joke {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.joke-button:hover {
+    opacity: 1;
+    animation-duration: 0.5s;
+    animation-name: joke-button-animation;
+    animation-fill-mode: none;
+    animation-iteration-count: infinite;
+    animation-direction: backward;
+    animation-timing-function: linear;
+    
+
+}
+.page-footer {
+    clear: both;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    
+    
+}
+.grid__item {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-align: center;
+}
+
+.table-head {
+    font-size:x-large
+}
+.sun {
+    /*short version*/
+    animation: 4s color-change infinite alternate linear;
+    /*Long version with all the properties
+    animation-duration: 4s;
+    animation-name: color-change;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear; */
+}
+.cloud-front {
+    /*long way
+    animation-duration: 30s;
+    animation-name: cloud-move;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    */
+    animation: 30s cloud-move infinite alternate linear;
+}
+.cloud-back {
+    animation: 30s cloud-move-reverse infinite alternate linear;
+}
+@media all and (max-width: 500px){
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media all and (min-width: 500px) and (max-width: 750px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+}
+}
+@media all and (max-width: 750px) {
+    /* all the shared code*/
+    .grid {
+        gap: 10px
+    }
+    .grid__item:last-child {
+        grid-column: auto/auto;
+        grid-row: auto/auto;
+    }
+    h1 {
+        font-size: 22px;
+    }
+}
+@keyframes color-change {
+    0% {
+        fill: #edc655;
+    }
+    50% {
+        fill: #fcffad;
+    }
+    100% {
+        fill: #f76414;
+    }
+}
+@keyframes cloud-move {
+    from {
+        /* 0 represents the x value, 50 the y*/
+        transform: translate(0px, 50px);
+    }
+    to {
+        /*200 represents the new x position, y stayed the same so the cloud will end up moving to the right*/
+        transform: translate(200px, 50px);
+    }
+}
+@keyframes cloud-move-reverse {
+    from {
+        transform: translate(466px, 48px);
+    }
+    to {
+        transform: translate(100px, 48px);
+    }
+}
+@keyframes nav-link-scale {
+    from {
+        scale: 1;
+    }
+    to {
+        scale: 2;
+    }
+}
+@keyframes joke-button-animation {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(-600px, 0);
+    }
+
+    100% {
+        transform: translate(600px, 0px);
+    }
+}
