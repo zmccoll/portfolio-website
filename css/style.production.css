@@ -112,7 +112,7 @@ a:active {
 button {
     border: none; /*overwrites brower default and resets the border*/
     font-family: inherit; /*this will take font from outer container*/
-    background-color: #165011;
+    background-color: var(--primary-color);
     color: rgb(214, 212, 209);
     font-size: 16px;
     text-decoration: underline; 
@@ -192,8 +192,8 @@ button:hover, button:focus, .button:hover, .button:focus {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr 20px 1fr 20px 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
     
 }
 .grid__item {
@@ -248,7 +248,7 @@ button:hover, button:focus, .button:hover, .button:focus {
 @media all and (max-width: 750px) {
     /* all the shared code*/
     .grid {
-        gap: 10px
+        gap: auto;
     }
     .grid__item:last-child {
         grid-column: auto/auto;
