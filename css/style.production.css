@@ -9,10 +9,19 @@
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
 }
-body {
+:root {
+    --primary-color:#0A470B;
+    --secondary-color: rgb(214, 212, 209);
+    --dark-grey: #2b2b2b;
+    --button-background: #165011;
+    --button-secondary: #302ddf;
+    --visited-link: #1e0368;
+
+}
+    body {
     font-family: 'Lato', sans-serif;
     background-color: rgb(214, 212, 209);
-    color: #438b3d;
+    color: var(--primary-color);
 }
 .page-header {
     display: -webkit-box;
@@ -38,6 +47,7 @@ body {
 .navigation-list li {
     display: inline-block;
     margin-left: 20px;
+    color: var(--primary-color);
 }
 .navigation-list li:hover {
     -webkit-animation: 1s nav-link-scale infinite alternate ease;
@@ -77,7 +87,7 @@ body {
 
 }
 a{
-    color: #357b70;
+    color: var(--button-secondary);
 }
 .profile {
     max-width: 700px;
@@ -86,7 +96,7 @@ a{
 }
 a:visited {
     /* visited link*/
-    color: #05676e;
+    color: var(--visited-link);
 }
 a:hover, a:focus {
     /* no underlining when hovering a link*/
@@ -96,7 +106,7 @@ a:hover, a:focus {
 }
 a:active {
     /*selected link*/
-    color: #489c79;
+    color: #5b48ea;
 }
 
 button {
@@ -118,8 +128,8 @@ button {
 .button {
     border: none; /*overwrites brower default and resets the border*/
     font-family: inherit; /*this will take font from outer container*/
-    background-color: #165011;
-    color: rgb(214, 212, 209);
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
     font-size: 16px;
     text-decoration: underline; 
     padding: 10px;/*adds spacing to the button*/
@@ -134,8 +144,8 @@ button:active {
     background-color: #4b7a47;/*changes color of button when clicked*/
 }
 .button_secondary {
-    background-color: #302ddf;
-    color: rgb(214, 212, 209);
+    background-color: var(--button-secondary);
+    color: var(--secondary-color);
 }
 button:hover, button:focus, .button:hover, .button:focus {
     text-decoration: none;
@@ -187,12 +197,12 @@ button:hover, button:focus, .button:hover, .button:focus {
     
 }
 .grid__item {
-    background-color: #438b3d;
+    background-color: var(--primary-color);
     color: rgb(214, 212, 209);
     text-align: center;
 }
 .work-link {
-    color: black;
+    color: var(--secondary-color);
 }
 .table-head {
     font-size:x-large
