@@ -200,6 +200,7 @@ button:hover, button:focus, .button:hover, .button:focus {
     background-color: var(--primary-color);
     color: rgb(214, 212, 209);
     text-align: center;
+    line-height: 1.5;
 }
 .work-link {
     color: var(--secondary-color);
